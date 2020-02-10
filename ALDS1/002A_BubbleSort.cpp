@@ -16,12 +16,14 @@ template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return 1; }
 // ll gcd(ll a,ll b){return b?gcd(b,a%b):a;}
 // ll lcm(ll a,ll b){return a/gcd(a,b)*b;}
 
+//　バブルソートの交換回数=転倒数
 int bubblesort(int a[],int n){
   int cnt = 0;
   bool flag = true;
   while(flag){
     flag = false;
     FORD(i,n-1,1){
+      // a[i]<=a[i-1]とすると安定ではなくなる
       if(a[i]<a[i-1]){
         swap(a[i],a[i-1]);
         ++cnt;
