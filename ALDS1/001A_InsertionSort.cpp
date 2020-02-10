@@ -16,13 +16,18 @@ template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return 1; }
 // ll gcd(ll a,ll b){return b?gcd(b,a%b):a;}
 // ll lcm(ll a,ll b){return a/gcd(a,b)*b;}
 
+void trace(int a[], int N){
+  int i;
+  FOR(i,0,N-1){
+    if(i>0) cout << " ";
+    cout << a[i];
+  }
+  cout << endl;
+}
+
 int InsertionSort(int a[], int n){
   FOR(i,1,n-1){
-    FOR(k,0,n-1) {
-      if(k!=n-1) cout << a[k] << " ";
-      else cout << a[k];
-    }
-    cout << endl;
+    trace(a,n);
     int v = a[i];
     int j = i-1;
     while(j>=0 && a[j]>v){
